@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>基础意图分类</title>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="../js/jquery-editable-select.min.js"></script>
+  <link href="../css/jquery-editable-select.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<div class="navigation">
+  <div>
+    <div class="global_options">
+      <div>用户名: </div>
+      <input id="username" placeholder="请输入用户名">
+    </div>
+    <div class="global_options">
+      <div>选择语言: </div>
+      <form>
+        <select class="global_selector" id="select_language">
+          <!--<option>zh-TW</option>-->
+        </select>
+      </form>
+    </div>
+    <div class="global_options">
+      <div>标注模式: </div>
+      <form>
+        <select class="global_selector" id="annotate_mode">
+          <option>increase</option>
+          <option>correction</option>
+          <option>relabel</option>
+        </select>
+      </form>
+    </div>
+    <div class="global_options">
+      <div>推荐标签: </div>
+      <form>
+        <select class="global_selector" id="recommend_mode">
+          <option>random</option>
+        </select>
+      </form>
+    </div>
+    <div class="global_options" id="search">搜索</div>
+  </div>
+</div>
+
+
+<!-- 内容 -->
+<div class="content">
+  <div class="left_content">
+    <ul class="v_nav" >
+      <li>用户名, 建议用中文的名字, 并且不要变来变去. </li>
+    </ul>
+    <div class="left_content_tips">
+      <table class="tips_table" id=""></table>
+    </div>
+  </div>
+
+  <div class="center_content">
+    <div class="center_content_box">
+      <div class="center_content_left">
+        <table class="workspace_table" id="text_basic_intent_table">
+          <!-- table -->
+        </table>
+      </div>
+      <div class="center_content_right">
+        <div class="submit_button" id="submit_button">提交</div>
+        <div class="submit_button" id="last_submit_button">上一组</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="right_content">
+    <div id="annotator_workload">
+      <table class="statistics_table" id="annotator_workload_table"></table>
+      <table class="statistics_table" id="labels_count_table"></table>
+      <table class="statistics_table" id="model_info_table"></table>
+    </div>
+  </div>
+</div>
+
+
+<!--  底部  -->
+<div class="tail">
+  <div>
+    NX
+  </div>
+</div>
+
+<!-- 引入样式和脚本 -->
+<link rel="stylesheet" href="../css/basic_intent.css" />
+<script src="../js/basic_intent.js"></script>
+
+</body>
+</html>

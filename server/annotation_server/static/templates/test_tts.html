@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>语音合成测试</title>
+  <meta charset="UTF-8">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+</head>
+<body>
+<!-- 导航栏 -->
+<div class="navigation"></div>
+
+<!-- 内容 -->
+<div class="content">
+  <div class="left_content"></div>
+  <div class="center_content">
+    <table class="workspace_table" id="bark_workspace_table">
+      <thead>
+        <tr>
+          <td>engine</td>
+          <td>text</td>
+          <td>speaker</td>
+          <td>predict</td>
+          <td>audio</td>
+          <td>remark</td>
+        </tr>
+      </thead>
+      <tr>
+        <td>bark</td>
+        <td><input class="text_input" id="bark_text_input"></td>
+        <td><select class="speaker_select" id="bark_speaker_select"></select></td>
+        <td><input class="run_predict_button" id="bark_run_predict_button" type="button" value="predict"></td>
+        <td>
+          <audio controls id="bark_tts_audio_box" autoplay>
+            <source id="bark_tts_audio" src="" type="audio/wav">
+          </audio>
+        </td>
+        <td><a href="https://docs.qq.com/sheet/DWnFZZWpXclB4c3Vw?tab=BB08J2" target="_blank">查看用法和建议</a></td>
+      </tr>
+    </table>
+  </div>
+  <div class="right_content"></div>
+</div>
+
+<!--  底部  -->
+<div class="tail">
+  <div>
+    NX
+  </div>
+</div>
+
+<!-- 引入样式和脚本 -->
+<link rel="stylesheet" href="../css/test_tts.css" />
+<script src="../js/test_tts.js"></script>
+
+</body>
+</html>
