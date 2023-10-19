@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# sh install.sh --stage 3 --stop_stage 4 --system_version centos
+
 
 system_version=windows;
 verbose=true;
@@ -82,7 +84,7 @@ if [ $system_version == "centos" ]; then
 
   if [ ${stage} -le 3 ] && [ ${stop_stage} -ge 3 ]; then
     $verbose && echo "stage 3: create voicemail soft link"
-    cd "${work_dir}server/annotation_server/static" || exit 1;
+    cd "${work_dir}/server/annotation_server/static" || exit 1;
 
     mkdir -p "datasets/voicemail";
     cd "datasets/voicemail" || exit 1;
@@ -99,7 +101,7 @@ if [ $system_version == "centos" ]; then
 
   if [ ${stage} -le 4 ] && [ ${stop_stage} -ge 4 ]; then
     $verbose && echo "stage 4: create basic intent soft link"
-    cd "${work_dir}server/annotation_server/static" || exit 1;
+    cd "${work_dir}/server/annotation_server/static" || exit 1;
 
     mkdir -p "datasets/basic_intent";
     cd "datasets/basic_intent" || exit 1;
