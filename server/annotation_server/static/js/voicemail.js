@@ -54,6 +54,46 @@ var when_click_last_button = function () {
   $("#voicemail_audio_box").load();
 }
 
+//keypress event
+var when_keypress_label_button = function (label) {
+  //var
+  var label_button_media_box = $("#label_button_media_box");
+  var voicemail_audio_box = $("#voicemail_audio_box");
+  voicemail_audio_box[0].pause();
+
+  label_button_media_box.attr("src", `tts_media/${label}.wav`)
+  label_button_media_box[0].play()
+
+  reset_choice_of_label();
+  annotate_one(label);
+
+}
+
+var when_keypress_last_button = function () {
+  var label_button_media_box = $("#label_button_media_box");
+
+  label_button_media_box.attr("src", `tts_media/last_one.wav`)
+  label_button_media_box[0].play()
+
+  when_click_last_button();
+}
+
+var when_keypress_next_button = function () {
+  var label_button_media_box = $("#label_button_media_box");
+
+  var username = $("#username").val();
+  var language = $("#select_language").val();
+
+  label_button_media_box.attr("src", `tts_media/next_one.wav`)
+  label_button_media_box[0].play()
+
+  if (username === "") {
+    alert("请输入用户名!")
+    return null;
+  } else {
+    download_one(username, language);
+  }
+}
 
 //reset messages
 var reset_choice_of_language = function(){
@@ -139,10 +179,12 @@ var reset_choice_of_label = function () {
         `)
       }
 
+      var label_button = $(".label_button")
       //bind click
-      $(".label_button").click(function () {
+      label_button.click(function () {
         when_click_label_button($(this).children(".label_button_label").text());
       });
+
     }
   });
 }
@@ -369,4 +411,37 @@ $(document).ready(function(){
     when_click_search();
   });
 
+  //bind keypress
+  $(document).on("keypress", function(event) {
+      // 获取按下的键码
+      var keyCode = event.keyCode;
+      console.log('按下了键码为: ' + keyCode);
+
+      // 根据按键执行相应操作
+      if (keyCode === 49) {
+        when_keypress_label_button("voicemail")
+      } else if (keyCode === 50) {
+        when_keypress_label_button("mute")
+      } else if (keyCode === 51) {
+        when_keypress_label_button("white_noise")
+      } else if (keyCode === 52) {
+        when_keypress_label_button("bell")
+      } else if (keyCode === 53) {
+        when_keypress_label_button("noise")
+      } else if (keyCode === 54) {
+        when_keypress_label_button("voice")
+      } else if (keyCode === 55) {
+        when_keypress_label_button("noise_mute")
+      } else if (keyCode === 56) {
+        when_keypress_label_button("other")
+      } else if (keyCode === 57) {
+        when_keypress_label_button("music")
+      } else if (keyCode === 48) {
+        when_keypress_last_button()
+      } else if (keyCode === 46) {
+        when_keypress_next_button()
+      } else {
+        // console.log('按下了键码为: ' + keyCode);
+      }
+  });
 })

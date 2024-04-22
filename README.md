@@ -39,4 +39,8 @@ http://127.0.0.1:9080/voicemail
 
 ```
 
-
+### 备注
+创建软链接
+```text
+ln -s /data/tianxing/PycharmProjects/datasets/voicemail/EarlyMedia-1 EarlyMedia-1
+```

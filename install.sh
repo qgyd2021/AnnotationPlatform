@@ -78,6 +78,7 @@ if [ $system_version == "centos" ]; then
     /usr/local/python-${python_version}/bin/pip3 install virtualenv
     mkdir -p /data/local/bin
     cd /data/local/bin || exit 1;
+    # source /data/local/bin/AnnotationPlatform/bin/activate
     /usr/local/python-${python_version}/bin/virtualenv AnnotationPlatform
 
   fi
