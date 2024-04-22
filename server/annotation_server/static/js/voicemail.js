@@ -95,6 +95,11 @@ var when_keypress_next_button = function () {
   }
 }
 
+var when_keypress_play_button = function () {
+  when_click_play_button();
+}
+
+
 //reset messages
 var reset_choice_of_language = function(){
   var url = "voicemail/get_choice_of_language";
@@ -440,6 +445,8 @@ $(document).ready(function(){
         when_keypress_last_button()
       } else if (keyCode === 46) {
         when_keypress_next_button()
+      } else if (keyCode === 13) {
+        when_keypress_play_button()
       } else {
         // console.log('按下了键码为: ' + keyCode);
       }
