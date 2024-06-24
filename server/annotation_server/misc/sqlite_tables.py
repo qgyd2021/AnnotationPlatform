@@ -178,10 +178,11 @@ class TVoicemail(ParamsSingleton):
         try:
             sql = """
 CREATE TABLE Voicemail (
-basename TEXT PRIMARY KEY, 
+basename TEXT, 
 filename TEXT, language TEXT, 
 finish INT, checked INT, annotator TEXT,
-label TEXT, predict TEXT, prob DOUBLE, correct INT
+label TEXT, predict TEXT, prob DOUBLE, correct INT,
+PRIMARY KEY (basename, language)
 );
 """.strip().replace('\n', ' ')
             self.sqlite_connect.execute(sql, commit=True)
