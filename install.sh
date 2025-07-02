@@ -8,7 +8,7 @@ verbose=true;
 stage=0
 stop_stage=0
 
-python_version=3.6.5
+python_version=3.9.9
 
 work_dir="$(pwd)"
 

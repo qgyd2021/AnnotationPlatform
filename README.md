@@ -1,5 +1,17 @@
 ## 标注平台
 
+```text
+docker run -itd python:3.12 /bin/bash
+
+docker run -itd \
+--name AnnotationPlatform \
+--restart=always \
+--network host \
+-v /data/tianxing/PycharmProjects/AnnotationPlatform:/data/tianxing/PycharmProjects/AnnotationPlatform \
+python:3.12 /bin/bash
+
+
+```
 
 ```text
 HTML 参考链接: 

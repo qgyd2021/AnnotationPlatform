@@ -23,7 +23,6 @@ def get_args():
         "--host",
         # default="127.0.0.1",
         default="10.75.27.247",
-
         type=str,
     )
     parser.add_argument(
@@ -39,11 +38,10 @@ def get_args():
     )
     parser.add_argument(
         "--local_wav_finished",
-        default="E:/programmer/asr_datasets/voicemail/wav_finished/",
+        default="E:/Users/tianx/HuggingDatasets/vm_sound_classification/data/wav_finished/",
         type=str,
     )
     args = parser.parse_args()
-
     return args
 
 
